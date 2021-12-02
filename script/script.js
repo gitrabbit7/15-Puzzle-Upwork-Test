@@ -124,4 +124,5 @@ function selectDegree(selectedObject) {
   boardSize = degree * degree;
   setBoard();
   shuffle();
+  gameState = '';
 }
