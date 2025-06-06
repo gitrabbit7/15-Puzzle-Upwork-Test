@@ -42,17 +42,17 @@ tiles.forEach((tile, index) => {
 
 // Call move function when the arrow keys pressed
 document.addEventListener("keydown", function (event) {
-  if (event.key == "ArrowLeft" && blankIndex % degree != 0) {
+  if (event.key === "ArrowLeft" && blankIndex % degree !== 0) {
     checkMoveAbility(shuffledArray[blankIndex - 1]);
-  } else if (event.key == "ArrowUp" && blankIndex + degree < boardSize) {
-    checkMoveAbility(shuffledArray[blankIndex + degree]);
-    console.log(blankIndex, boardSize)
-  } else if (event.key == "ArrowRight" && blankIndex % degree != degree - 1) {
-    checkMoveAbility(shuffledArray[blankIndex + 1]);
-    console.log(blankIndex, boardSize)
-  } else if (event.key == "ArrowDown" && blankIndex - degree >= 0) {
+  } else if (event.key === "ArrowUp" && blankIndex - degree >= 0) {
     checkMoveAbility(shuffledArray[blankIndex - degree]);
-    console.log(blankIndex, boardSize)
+  } else if (
+    event.key === "ArrowRight" &&
+    blankIndex % degree !== degree - 1
+  ) {
+    checkMoveAbility(shuffledArray[blankIndex + 1]);
+  } else if (event.key === "ArrowDown" && blankIndex + degree < boardSize) {
+    checkMoveAbility(shuffledArray[blankIndex + degree]);
   }
 });
 
